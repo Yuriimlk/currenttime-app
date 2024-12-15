@@ -1,22 +1,21 @@
 package com.example.currenttime_app.controller;
 
+import com.example.currenttime_app.service.TimeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
-
 @RestController
-public class HealthCheckController {
-/*
-    @GetMapping("/currentTime")
-    public String healCheck() {
-        return "App works!";
+public class TimeController {
+
+    private final TimeService timeService;
+
+    public TimeController(TimeService timeService) {
+        this.timeService = timeService;
     }
 
- */
     @GetMapping("/currentTime")
     public String currentTime() {
-        return "Current time: " + LocalDateTime.now();
+        return timeService.currentTime();
     }
 
 }
