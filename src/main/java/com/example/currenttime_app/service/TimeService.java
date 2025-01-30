@@ -22,8 +22,8 @@ public class TimeService {
         return apiCaller.getTimeZone();
     }
 
-    public String coordinate() {
-        return apiCaller.getCoordinate("10", "-55");
+    public String coordinate(String latitude, String longtitude) {
+        return apiCaller.getCoordinate(latitude, longtitude);
     }
 
 }

@@ -26,7 +26,7 @@ public class TimeController {
 
     @GetMapping("/coordinate")
     public String coordinate() {
-        return timeService.coordinate();
+        return timeService.coordinate("10", "-55");
     }
 
 }
