@@ -26,8 +26,8 @@ public class TimeController {
     }
 
     @GetMapping("/coordinate")
-    public String coordinate(@RequestParam String first, @RequestParam String second) {
-        return timeService.coordinate(first, second);
+    public String coordinate(@RequestParam String latitude, @RequestParam String longtitude) {
+        return timeService.coordinate(latitude, longtitude);
     }
 
 }
