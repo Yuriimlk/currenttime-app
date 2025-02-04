@@ -3,6 +3,7 @@ package com.example.currenttime_app.controller;
 import com.example.currenttime_app.Config.ApiCaller;
 import com.example.currenttime_app.service.TimeService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -25,8 +26,8 @@ public class TimeController {
     }
 
     @GetMapping("/coordinate")
-    public String coordinate() {
-        return timeService.coordinate("10", "-55");
+    public String coordinate(@RequestParam String first, @RequestParam String second) {
+        return timeService.coordinate(first, second);
     }
 
 }
